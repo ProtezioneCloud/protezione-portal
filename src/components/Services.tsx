@@ -1,8 +1,23 @@
 
-import { CloudCog, Server, Database, Shield, Lock, Globe } from "lucide-react";
+import { CloudCog, Server, Database, Shield, Lock, Globe, Mail, Code, Settings } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 const services = [
+  {
+    icon: <Settings className="w-10 h-10 text-accent" />,
+    title: "Google Workspace",
+    description: "Complete setup, migration, and ongoing maintenance of Google Workspace. Expert consulting for optimizing your business collaboration tools."
+  },
+  {
+    icon: <Code className="w-10 h-10 text-accent" />,
+    title: "ERPNext Solutions",
+    description: "Professional support, setup, configuration and custom modules development for ERPNext open source software to streamline your business operations."
+  },
+  {
+    icon: <Mail className="w-10 h-10 text-accent" />,
+    title: "Domain & Email Hosting",
+    description: "Reliable domain registration, hosting, and professional email solutions with advanced security features and spam protection."
+  },
   {
     icon: <CloudCog className="w-10 h-10 text-accent" />,
     title: "Google Cloud Platform",
