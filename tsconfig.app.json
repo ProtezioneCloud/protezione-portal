@@ -11,8 +11,12 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+/*    "noEmit": true,    */
     "jsx": "react-jsx",
+
+    /* Output */
+    "outDir": "dist",
+    "noEmit": false, 
 
     /* Linting */
     "strict": false,
