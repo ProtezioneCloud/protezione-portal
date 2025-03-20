@@ -2,10 +2,13 @@
 import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Menu, X, Shield } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +20,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.learning'), href: '#learning' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   return (
@@ -39,7 +43,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -50,20 +54,24 @@ const Navbar = () => {
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300"></span>
             </a>
           ))}
+          <LanguageSwitcher />
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <LanguageSwitcher />
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-foreground"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

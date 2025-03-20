@@ -1,8 +1,18 @@
 
 import { Shield } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
+  
+  const quickLinks = [
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.learning'), href: '#learning' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.contact'), href: '#contact' },
+  ];
   
   return (
     <footer className="bg-white border-t border-border py-12">
@@ -22,10 +32,13 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-base mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-muted-foreground hover:text-accent transition-colors">Home</a></li>
-              <li><a href="#services" className="text-muted-foreground hover:text-accent transition-colors">Services</a></li>
-              <li><a href="#about" className="text-muted-foreground hover:text-accent transition-colors">About</a></li>
-              <li><a href="#contact" className="text-muted-foreground hover:text-accent transition-colors">Contact</a></li>
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <a href={link.href} className="text-muted-foreground hover:text-accent transition-colors">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           
@@ -37,11 +50,11 @@ const Footer = () => {
         
         <div className="border-t border-border mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            &copy; {currentYear} protezione.cloud. All rights reserved.
+            &copy; {currentYear} protezione.cloud. {t('footer.rights')}
           </p>
           <div className="mt-4 md:mt-0">
             <p className="text-muted-foreground text-sm">
-              Designed with precision and simplicity
+              {t('footer.design')}
             </p>
           </div>
         </div>

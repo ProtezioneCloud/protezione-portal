@@ -1,8 +1,11 @@
 
 import { Cloud, Shield, Server } from "lucide-react";
 import FadeIn from "./FadeIn";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section 
       id="home" 
@@ -16,20 +19,20 @@ const Hero = () => {
             <FadeIn>
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-4">
                 <Shield className="w-4 h-4 mr-2" />
-                <span className="text-sm font-medium">Professional IT Security</span>
+                <span className="text-sm font-medium">{t('hero.badge')}</span>
               </div>
             </FadeIn>
             
             <FadeIn delay={100}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-                Secure Cloud <br />
-                <span className="text-accent">Solutions</span> for Your Business
+                {t('hero.title1')} <br />
+                <span className="text-accent">{t('hero.title2')}</span> {t('hero.title3')}
               </h1>
             </FadeIn>
             
             <FadeIn delay={200}>
               <p className="text-lg text-muted-foreground max-w-xl">
-                Specialized in Google Cloud Platform services, delivering enterprise-grade security, scalability, and performance for your mission-critical applications.
+                {t('hero.description')}
               </p>
             </FadeIn>
             
@@ -39,13 +42,13 @@ const Hero = () => {
                   href="#contact" 
                   className="px-8 py-3 rounded-md bg-accent text-white font-medium shadow-button hover:shadow-hover transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  Get Started
+                  {t('hero.cta.start')}
                 </a>
                 <a 
                   href="#services" 
                   className="px-8 py-3 rounded-md bg-secondary text-foreground font-medium hover:bg-secondary/80 transition-all duration-300"
                 >
-                  Learn More
+                  {t('hero.cta.learn')}
                 </a>
               </div>
             </FadeIn>
