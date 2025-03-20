@@ -3,9 +3,12 @@ import { useState } from "react";
 import { Mail, Send } from "lucide-react";
 import FadeIn from "./FadeIn";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,10 +47,9 @@ const Contact = () => {
       <div className="container max-w-7xl mx-auto px-6">
         <FadeIn>
           <div className="mb-16 text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('contact.title')}</h2>
             <p className="text-muted-foreground">
-              Have a project in mind or questions about Google Cloud services? 
-              I'm here to help you navigate the cloud landscape and find the perfect solution for your needs.
+              {t('contact.description')}
             </p>
           </div>
         </FadeIn>
@@ -58,13 +60,12 @@ const Contact = () => {
               <div className="bg-white rounded-xl shadow-card p-8 border border-border/50">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-6">
                   <Mail className="w-4 h-4 mr-2" />
-                  <span className="text-sm font-medium">Get in Touch</span>
+                  <span className="text-sm font-medium">{t('contact.sidebar.badge')}</span>
                 </div>
                 
-                <h3 className="text-2xl font-semibold mb-4">Let's discuss your cloud strategy</h3>
+                <h3 className="text-2xl font-semibold mb-4">{t('contact.sidebar.title')}</h3>
                 <p className="text-muted-foreground mb-8">
-                  Whether you're looking to migrate to Google Cloud, optimize your current setup, 
-                  or enhance security, I'm ready to help you achieve your goals.
+                  {t('contact.sidebar.description')}
                 </p>
                 
                 <div className="space-y-4">
@@ -87,7 +88,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="glass rounded-xl p-8 shadow-card border border-border/50">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">{t('contact.form.name')}</label>
                     <input
                       type="text"
                       id="name"
@@ -95,12 +96,12 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-md border border-border bg-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all"
-                      placeholder="Your name"
+                      placeholder={t('contact.form.placeholder.name')}
                       required
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">{t('contact.form.email')}</label>
                     <input
                       type="email"
                       id="email"
@@ -108,14 +109,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-md border border-border bg-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all"
-                      placeholder="Your email"
+                      placeholder={t('contact.form.placeholder.email')}
                       required
                     />
                   </div>
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="company" className="block text-sm font-medium mb-2">Company</label>
+                  <label htmlFor="company" className="block text-sm font-medium mb-2">{t('contact.form.company')}</label>
                   <input
                     type="text"
                     id="company"
@@ -123,12 +124,12 @@ const Contact = () => {
                     value={formData.company}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-md border border-border bg-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all"
-                    placeholder="Your company name"
+                    placeholder={t('contact.form.placeholder.company')}
                   />
                 </div>
                 
                 <div className="mb-8">
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">{t('contact.form.message')}</label>
                   <textarea
                     id="message"
                     name="message"
@@ -136,7 +137,7 @@ const Contact = () => {
                     onChange={handleChange}
                     rows={5}
                     className="w-full px-4 py-3 rounded-md border border-border bg-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all resize-none"
-                    placeholder="How can I help you?"
+                    placeholder={t('contact.form.placeholder.message')}
                     required
                   ></textarea>
                 </div>
@@ -147,10 +148,10 @@ const Contact = () => {
                   className="w-full md:w-auto px-8 py-3 rounded-md bg-accent text-white font-medium flex items-center justify-center shadow-button hover:shadow-hover transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0"
                 >
                   {isSubmitting ? (
-                    <span>Sending...</span>
+                    <span>{t('contact.form.sending')}</span>
                   ) : (
                     <>
-                      <span>Send Message</span>
+                      <span>{t('contact.form.submit')}</span>
                       <Send className="ml-2 h-4 w-4" />
                     </>
                   )}
