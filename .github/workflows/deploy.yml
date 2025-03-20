@@ -3,7 +3,7 @@ name: Deploy su GitHub Pages
 on:
   push:
     branches:
-      - main  # Sostituisci con il nome del tuo branch principale se è diverso
+      - main  # Sostituisci con il nome corretto se è diverso
 
 permissions:
   contents: read
@@ -27,12 +27,14 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+          npm run build
+          ls -R dist  # 🔍 Controlla che la cartella dist esista
 
-      - name: Deploy to GitHub Pages
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ./dist  # 🔥 Assicurati che dist contenga i file corretti!
 
       - name: Deploy
         uses: actions/deploy-pages@v4
