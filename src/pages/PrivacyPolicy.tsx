@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 const PrivacyPolicy = () => {
-  const { t, currentLanguage } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <div className="min-h-screen bg-background">
@@ -13,11 +13,11 @@ const PrivacyPolicy = () => {
       <section className="pt-32 pb-16">
         <div className="container max-w-4xl mx-auto px-6">
           <h1 className="text-3xl md:text-4xl font-bold mb-8">
-            {currentLanguage === 'it' ? 'Informativa sulla Privacy' : 'Privacy Policy'}
+            {language === 'it' ? 'Informativa sulla Privacy' : 'Privacy Policy'}
           </h1>
           
           <div className="prose prose-blue max-w-none">
-            {currentLanguage === 'it' ? (
+            {language === 'it' ? (
               <>
                 <p className="text-lg mb-4">Ultimo aggiornamento: {new Date().toLocaleDateString('it-IT')}</p>
                 
