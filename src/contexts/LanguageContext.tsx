@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'it';
@@ -162,7 +163,7 @@ export const translations: Translations = {
   'contact.form.email': {
     en: 'Email',
     it: 'Email',
-    },
+  },
   'contact.form.company': {
     en: 'Company',
     it: 'Azienda',
@@ -205,10 +206,6 @@ export const translations: Translations = {
     en: 'Designed with precision and simplicity',
     it: 'Progettato con precisione e semplicità',
   },
-  'footer.privacy': {
-    en: 'Privacy Policy',
-    it: 'Informativa sulla Privacy',
-  },
 };
 
 // Create the language context
@@ -233,7 +230,6 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  // Set Italian as the default language
   const [language, setLanguage] = useState<Language>('it');
 
   // Translation function

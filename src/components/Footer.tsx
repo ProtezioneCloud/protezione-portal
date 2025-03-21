@@ -1,7 +1,6 @@
 
 import { Shield } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -53,10 +52,7 @@ const Footer = () => {
           <p className="text-muted-foreground text-sm">
             &copy; {currentYear} protezione.cloud. {t('footer.rights')}
           </p>
-          <div className="mt-4 md:mt-0 flex gap-4 items-center">
-            <Link to="/privacy-policy" className="text-muted-foreground hover:text-accent transition-colors text-sm">
-              {t('footer.privacy') || 'Privacy Policy'}
-            </Link>
+          <div className="mt-4 md:mt-0">
             <p className="text-muted-foreground text-sm">
               {t('footer.design')}
             </p>
