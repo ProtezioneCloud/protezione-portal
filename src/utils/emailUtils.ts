@@ -1,5 +1,5 @@
 
-import { EMAIL_CONFIG, isEmailConfigured } from './configUtils';
+import { EMAIL_SERVICE, EMAIL_USER, EMAIL_PASS, EMAIL_FROM, EMAIL_TO, isEmailConfigured } from './configUtils';
 
 export interface EmailData {
   name: string;
@@ -28,12 +28,12 @@ export async function sendEmail(data: EmailData): Promise<{ success: boolean; me
       body: JSON.stringify({
         ...data,
         emailConfig: {
-          service: EMAIL_CONFIG.SERVICE,
-          user: EMAIL_CONFIG.USER,
+          service: EMAIL_SERVICE,
+          user: EMAIL_USER,
           // We never send the password to the client, this is just for reference
           // The actual email sending should happen server-side
-          to: EMAIL_CONFIG.TO,
-          from: EMAIL_CONFIG.FROM
+          to: EMAIL_TO,
+          from: EMAIL_FROM
         }
       }),
     });
