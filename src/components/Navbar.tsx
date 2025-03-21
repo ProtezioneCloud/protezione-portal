@@ -34,7 +34,7 @@ const Navbar = () => {
       return link.hash;
     }
     // Otherwise use full path
-    return link.href + link.hash;
+    return `${link.href}${link.hash}`;
   };
 
   return (
