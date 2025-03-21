@@ -5,6 +5,7 @@ import { GA_MEASUREMENT_ID, isAnalyticsEnabled } from '@/utils/configUtils';
 
 declare global {
   interface Window {
+    dataLayer: unknown[];
     gtag: (
       command: 'js' | 'config' | 'event',
       action: unknown,

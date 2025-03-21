@@ -1,5 +1,5 @@
-
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { Menu, X, Shield } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,12 +21,21 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: t('nav.home'), href: '#home' },
-    { name: t('nav.services'), href: '#services' },
-    { name: t('nav.learning'), href: '#learning' },
-    { name: t('nav.about'), href: '#about' },
-    { name: t('nav.contact'), href: '#contact' },
+    { name: t('nav.home'), href: '/', hash: '#home' },
+    { name: t('nav.services'), href: '/', hash: '#services' },
+    { name: t('nav.learning'), href: '/', hash: '#learning' },
+    { name: t('nav.about'), href: '/', hash: '#about' },
+    { name: t('nav.contact'), href: '/', hash: '#contact' },
   ];
+
+  const getNavLinkHref = (link: { href: string, hash: string }) => {
+    // If we're already on the homepage, use hash links
+    if (location.pathname === '/' && link.href === '/') {
+      return link.hash;
+    }
+    // Otherwise use full path
+    return link.href + link.hash;
+  };
 
   return (
     <header 
@@ -37,22 +47,22 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#home" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <Shield className="h-7 w-7 text-accent group-hover:text-primary transition-colors duration-300" />
           <span className="font-display font-semibold text-xl">protezione.cloud</span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={getNavLinkHref(link)}
               className="font-medium text-foreground/80 hover:text-accent transition-colors duration-300 relative group"
             >
               {link.name}
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300"></span>
-            </a>
+            </Link>
           ))}
           <LanguageSwitcher />
         </nav>
@@ -83,14 +93,14 @@ const Navbar = () => {
       >
         <nav className="flex flex-col p-4 gap-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={getNavLinkHref(link)}
               className="font-medium py-2 text-foreground/80 hover:text-accent transition-colors duration-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
