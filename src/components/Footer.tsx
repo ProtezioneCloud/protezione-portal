@@ -8,7 +8,8 @@ const Footer = () => {
   
   const quickLinks = [
     { name: t('nav.home'), href: '#home' },
-    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.google.title'), href: '#google-services' },
+    { name: t('nav.other.title'), href: '#other-services' },
     { name: t('nav.learning'), href: '#learning' },
     { name: t('nav.about'), href: '#about' },
     { name: t('nav.contact'), href: '#contact' },
@@ -24,13 +25,14 @@ const Footer = () => {
               <span className="font-display font-semibold text-lg">protezione.cloud</span>
             </div>
             <p className="text-muted-foreground max-w-sm mb-6">
-              Expert Google Cloud solutions for businesses seeking secure, 
-              scalable, and efficient cloud infrastructure.
+              {t('language') === 'en' 
+                ? 'Expert Google Cloud solutions for businesses seeking secure, scalable, and efficient cloud infrastructure.'
+                : 'Soluzioni Google Cloud esperte per aziende che cercano un\'infrastruttura cloud sicura, scalabile ed efficiente.'}
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold text-base mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-base mb-4">{t('footer.quicklinks')}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -43,7 +45,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold text-base mb-4">Contact</h4>
+            <h4 className="font-semibold text-base mb-4">{t('footer.contact')}</h4>
             <p className="text-muted-foreground mb-1">contact@protezione.cloud</p>
           </div>
         </div>

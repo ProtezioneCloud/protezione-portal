@@ -18,6 +18,18 @@ export const translations: Translations = {
     en: 'Home',
     it: 'Home',
   },
+  'nav.google.title': {
+    en: 'Google Services',
+    it: 'Servizi Google',
+  },
+  'nav.google.services': {
+    en: 'Google Cloud Services',
+    it: 'Servizi Google Cloud',
+  },
+  'nav.other.title': {
+    en: 'Other Services',
+    it: 'Altri Servizi',
+  },
   'nav.services': {
     en: 'Services',
     it: 'Servizi',
@@ -29,6 +41,14 @@ export const translations: Translations = {
   'nav.learning': {
     en: 'Learning',
     it: 'Formazione',
+  },
+  'nav.erpnext': {
+    en: 'ERPNext',
+    it: 'ERPNext',
+  },
+  'nav.hosting': {
+    en: 'Hosting',
+    it: 'Hosting',
   },
   'nav.contact': {
     en: 'Contact',
@@ -65,14 +85,104 @@ export const translations: Translations = {
     it: 'Scopri di Più',
   },
   
-  // Services section
-  'services.title': {
-    en: 'Specialized Google Cloud Services',
-    it: 'Servizi Google Cloud Specializzati',
+  // Services sections
+  'googleservices.title': {
+    en: 'Google Cloud Services',
+    it: 'Servizi Google Cloud',
   },
-  'services.description': {
+  'googleservices.description': {
     en: 'Comprehensive Google Cloud Platform solutions tailored to your business needs, from infrastructure setup to ongoing management and optimization.',
     it: 'Soluzioni Google Cloud Platform complete su misura per le esigenze della tua azienda, dall\'implementazione dell\'infrastruttura alla gestione e ottimizzazione continua.',
+  },
+  'erpnext.title': {
+    en: 'ERPNext Solutions',
+    it: 'Soluzioni ERPNext',
+  },
+  'erpnext.description': {
+    en: 'Professional support, configuration and custom modules development for ERPNext open source software to streamline your business operations.',
+    it: 'Supporto professionale, configurazione e sviluppo di moduli personalizzati per il software open source ERPNext per ottimizzare le operazioni aziendali.',
+  },
+  'hosting.title': {
+    en: 'Domain & Email Hosting',
+    it: 'Hosting Domini & Email',
+  },
+  'hosting.description': {
+    en: 'Reliable domain registration, hosting, and professional email solutions with advanced security features and spam protection.',
+    it: 'Registrazione domini affidabile, hosting e soluzioni email professionali con funzionalità di sicurezza avanzate e protezione anti-spam.',
+  },
+  
+  // Services items
+  'services.google.workspace': {
+    en: 'Google Workspace',
+    it: 'Google Workspace',
+  },
+  'services.google.workspace.description': {
+    en: 'Complete setup, migration, and ongoing maintenance of Google Workspace. Expert consulting for optimizing your business collaboration tools.',
+    it: 'Configurazione completa, migrazione e manutenzione continua di Google Workspace. Consulenza esperta per ottimizzare gli strumenti di collaborazione aziendale.',
+  },
+  'services.erpnext': {
+    en: 'ERPNext Solutions',
+    it: 'Soluzioni ERPNext',
+  },
+  'services.erpnext.description': {
+    en: 'Professional support, setup, configuration and custom modules development for ERPNext open source software to streamline your business operations.',
+    it: 'Supporto professionale, configurazione e sviluppo di moduli personalizzati per il software open source ERPNext per ottimizzare le operazioni aziendali.',
+  },
+  'services.hosting': {
+    en: 'Domain & Email Hosting',
+    it: 'Hosting Domini & Email',
+  },
+  'services.hosting.description': {
+    en: 'Reliable domain registration, hosting, and professional email solutions with advanced security features and spam protection.',
+    it: 'Registrazione domini affidabile, hosting e soluzioni email professionali con funzionalità di sicurezza avanzate e protezione anti-spam.',
+  },
+  'services.gcp': {
+    en: 'Google Cloud Platform',
+    it: 'Google Cloud Platform',
+  },
+  'services.gcp.description': {
+    en: 'Expert deployment, migration, and management of GCP resources with best practices for security and cost optimization.',
+    it: 'Implementazione, migrazione e gestione esperta delle risorse GCP con best practice per la sicurezza e l\'ottimizzazione dei costi.',
+  },
+  'services.cloud': {
+    en: 'Cloud Infrastructure',
+    it: 'Infrastruttura Cloud',
+  },
+  'services.cloud.description': {
+    en: 'Design and implementation of scalable, reliable, and secure infrastructure solutions on Google Cloud.',
+    it: 'Progettazione e implementazione di soluzioni infrastrutturali scalabili, affidabili e sicure su Google Cloud.',
+  },
+  'services.data': {
+    en: 'Data Management',
+    it: 'Gestione Dati',
+  },
+  'services.data.description': {
+    en: 'Comprehensive database solutions including Cloud SQL, Bigtable, Firestore, and Spanner with robust backup strategies.',
+    it: 'Soluzioni database complete che includono Cloud SQL, Bigtable, Firestore e Spanner con robuste strategie di backup.',
+  },
+  'services.security': {
+    en: 'Security & Compliance',
+    it: 'Sicurezza & Conformità',
+  },
+  'services.security.description': {
+    en: 'Advanced security configurations, IAM policies, network security, and compliance with regulatory requirements.',
+    it: 'Configurazioni di sicurezza avanzate, policy IAM, sicurezza di rete e conformità con requisiti normativi.',
+  },
+  'services.devsecops': {
+    en: 'DevSecOps',
+    it: 'DevSecOps',
+  },
+  'services.devsecops.description': {
+    en: 'Integration of security into your CI/CD pipeline, automating security testing and compliance verification.',
+    it: 'Integrazione della sicurezza nella pipeline CI/CD, automazione dei test di sicurezza e verifica della conformità.',
+  },
+  'services.global': {
+    en: 'Global Infrastructure',
+    it: 'Infrastruttura Globale',
+  },
+  'services.global.description': {
+    en: 'Leverage Google\'s global network for high-performance applications with multi-region deployments.',
+    it: 'Sfrutta la rete globale di Google per applicazioni ad alte prestazioni con implementazioni multi-regione.',
   },
   
   // Learning section
@@ -205,6 +315,14 @@ export const translations: Translations = {
   'footer.design': {
     en: 'Designed with precision and simplicity',
     it: 'Progettato con precisione e semplicità',
+  },
+  'footer.quicklinks': {
+    en: 'Quick Links',
+    it: 'Link Rapidi',
+  },
+  'footer.contact': {
+    en: 'Contact',
+    it: 'Contatti',
   },
 };
 

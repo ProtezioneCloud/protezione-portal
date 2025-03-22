@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from "@/lib/utils";
@@ -26,13 +27,13 @@ const Navbar = () => {
   ];
   
   const googleServices = [
-    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.google.services'), href: '#google-services' },
   ];
   
   const otherServices = [
     { name: t('nav.learning'), href: '#learning' },
-    { name: 'ERPNext', href: '#erpnext' },
-    { name: 'Hosting', href: '#hosting' },
+    { name: t('nav.erpnext'), href: '#erpnext' },
+    { name: t('nav.hosting'), href: '#hosting' },
   ];
 
   return (
@@ -63,9 +64,13 @@ const Navbar = () => {
           ))}
           
           <div className="relative group">
-            <span className="font-medium text-foreground/80 hover:text-accent transition-colors duration-300 cursor-pointer">
-              Google Services
-            </span>
+            <a 
+              href="#google-services" 
+              className="font-medium text-foreground/80 hover:text-accent transition-colors duration-300 cursor-pointer flex items-center"
+            >
+              {t('nav.google.title')}
+              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300"></span>
+            </a>
             <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-background border border-border hidden group-hover:block">
               <div className="py-1">
                 {googleServices.map((service) => (
@@ -82,9 +87,13 @@ const Navbar = () => {
           </div>
           
           <div className="relative group">
-            <span className="font-medium text-foreground/80 hover:text-accent transition-colors duration-300 cursor-pointer">
-              Other Services
-            </span>
+            <a 
+              href="#other-services" 
+              className="font-medium text-foreground/80 hover:text-accent transition-colors duration-300 cursor-pointer flex items-center"
+            >
+              {t('nav.other.title')}
+              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300"></span>
+            </a>
             <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-background border border-border hidden group-hover:block">
               <div className="py-1">
                 {otherServices.map((service) => (
@@ -138,7 +147,7 @@ const Navbar = () => {
           ))}
           
           <div className="py-2 border-t border-border">
-            <h3 className="font-medium text-foreground/90 mb-2">Google Services</h3>
+            <h3 className="font-medium text-foreground/90 mb-2">{t('nav.google.title')}</h3>
             {googleServices.map((service) => (
               <a
                 key={service.name}
@@ -152,7 +161,7 @@ const Navbar = () => {
           </div>
           
           <div className="py-2 border-t border-border">
-            <h3 className="font-medium text-foreground/90 mb-2">Other Services</h3>
+            <h3 className="font-medium text-foreground/90 mb-2">{t('nav.other.title')}</h3>
             {otherServices.map((service) => (
               <a
                 key={service.name}
