@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'it';
@@ -274,57 +273,21 @@ export const translations: Translations = {
     en: 'Have a project in mind or questions about Google Cloud services? We\'re here to help you navigate the cloud landscape and find the perfect solution for your needs.',
     it: 'Hai un progetto in mente o domande sui servizi Google Cloud? Siamo qui per aiutarti a navigare nel panorama cloud e trovare la soluzione perfetta per le tue esigenze.',
   },
-  'contact.sidebar.badge': {
-    en: 'Get in Touch',
-    it: 'Contattaci',
+  'contact.options.email': {
+    en: 'Reach out to us via email for detailed inquiries or to discuss your specific requirements.',
+    it: 'Contattaci via email per richieste dettagliate o per discutere le tue esigenze specifiche.',
   },
-  'contact.sidebar.title': {
-    en: 'Let\'s discuss your cloud strategy',
-    it: 'Parliamo della tua strategia cloud',
+  'contact.options.telegram': {
+    en: 'Get quick responses and chat with our team through Telegram.',
+    it: 'Ottieni risposte rapide e chatta con il nostro team tramite Telegram.',
   },
-  'contact.sidebar.description': {
-    en: 'Whether you\'re looking to migrate to Google Cloud, optimize your current setup, or enhance security, we\'re ready to help you achieve your goals.',
-    it: 'Che tu stia cercando di migrare a Google Cloud, ottimizzare la tua configurazione attuale o migliorare la sicurezza, siamo pronti ad aiutarti a raggiungere i tuoi obiettivi.',
-  },
-  'contact.form.name': {
-    en: 'Name',
-    it: 'Nome',
+  'contact.options.whatsapp': {
+    en: 'Connect with us on WhatsApp for convenient and immediate communication.',
+    it: 'Connettiti con noi su WhatsApp per una comunicazione comoda e immediata.',
   },
   'contact.form.email': {
-    en: 'Email',
-    it: 'Email',
-  },
-  'contact.form.company': {
-    en: 'Company',
-    it: 'Azienda',
-  },
-  'contact.form.message': {
-    en: 'Message',
-    it: 'Messaggio',
-  },
-  'contact.form.placeholder.name': {
-    en: 'Your name',
-    it: 'Il tuo nome',
-  },
-  'contact.form.placeholder.email': {
-    en: 'Your email',
-    it: 'La tua email',
-  },
-  'contact.form.placeholder.company': {
-    en: 'Your company name',
-    it: 'Nome della tua azienda',
-  },
-  'contact.form.placeholder.message': {
-    en: 'How can we help you?',
-    it: 'Come possiamo aiutarti?',
-  },
-  'contact.form.submit': {
-    en: 'Send Message',
-    it: 'Invia Messaggio',
-  },
-  'contact.form.sending': {
-    en: 'Sending...',
-    it: 'Invio in corso...',
+    en: 'Send Email',
+    it: 'Invia Email',
   },
   
   // Footer

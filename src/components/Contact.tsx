@@ -13,21 +13,21 @@ const Contact = () => {
       title: "Email",
       description: t('contact.options.email'),
       link: "mailto:enzo@protezione.cloud",
-      linkText: "enzo@protezione.cloud"
+      linkText: t('contact.form.email')
     },
     {
       icon: <MessageCircle className="w-5 h-5" />,
       title: "Telegram",
       description: t('contact.options.telegram'),
       link: "https://t.me/sharpec",
-      linkText: "@sharpec"
+      linkText: "Telegram"
     },
     {
       icon: <MessageCircle className="w-5 h-5" />,
       title: "WhatsApp",
       description: t('contact.options.whatsapp'),
       link: "https://wa.me/393272408379",
-      linkText: "+39 327 240 8379"
+      linkText: "WhatsApp"
     }
   ];
 
