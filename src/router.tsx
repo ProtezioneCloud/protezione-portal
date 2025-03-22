@@ -6,7 +6,8 @@ import NotFound from './pages/NotFound';
 // Get the base URL from Vite's environment
 const baseUrl = import.meta.env.BASE_URL;
 
-// Create a router with the correct basename for GitHub Pages
+// Note: This router is kept for reference but is not used.
+// The actual routing is handled in App.tsx with BrowserRouter.
 export const router = createBrowserRouter(
   [
     {

@@ -1,5 +1,5 @@
-
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { Menu, X, Shield } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -21,10 +21,18 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t('nav.home'), href: '#home' },
-    { name: t('nav.services'), href: '#services' },
-    { name: t('nav.learning'), href: '#learning' },
     { name: t('nav.about'), href: '#about' },
     { name: t('nav.contact'), href: '#contact' },
+  ];
+  
+  const googleServices = [
+    { name: t('nav.services'), href: '#services' },
+  ];
+  
+  const otherServices = [
+    { name: t('nav.learning'), href: '#learning' },
+    { name: 'ERPNext', href: '#erpnext' },
+    { name: 'Hosting', href: '#hosting' },
   ];
 
   return (
@@ -37,12 +45,11 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#home" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <Shield className="h-7 w-7 text-accent group-hover:text-primary transition-colors duration-300" />
           <span className="font-display font-semibold text-xl">protezione.cloud</span>
-        </a>
+        </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
             <a
@@ -54,10 +61,48 @@ const Navbar = () => {
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300"></span>
             </a>
           ))}
+          
+          <div className="relative group">
+            <span className="font-medium text-foreground/80 hover:text-accent transition-colors duration-300 cursor-pointer">
+              Google Services
+            </span>
+            <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-background border border-border hidden group-hover:block">
+              <div className="py-1">
+                {googleServices.map((service) => (
+                  <a
+                    key={service.name}
+                    href={service.href}
+                    className="block px-4 py-2 text-sm text-foreground/80 hover:bg-muted transition-colors"
+                  >
+                    {service.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <div className="relative group">
+            <span className="font-medium text-foreground/80 hover:text-accent transition-colors duration-300 cursor-pointer">
+              Other Services
+            </span>
+            <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-background border border-border hidden group-hover:block">
+              <div className="py-1">
+                {otherServices.map((service) => (
+                  <a
+                    key={service.name}
+                    href={service.href}
+                    className="block px-4 py-2 text-sm text-foreground/80 hover:bg-muted transition-colors"
+                  >
+                    {service.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          
           <LanguageSwitcher />
         </nav>
 
-        {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-4">
           <LanguageSwitcher />
           <button 
@@ -74,11 +119,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div 
         className={cn(
           "md:hidden fixed inset-x-0 glass border-t border-border shadow-soft overflow-hidden transition-all duration-300 ease-in-out",
-          isMobileMenuOpen ? "max-h-60" : "max-h-0"
+          isMobileMenuOpen ? "max-h-screen" : "max-h-0"
         )}
       >
         <nav className="flex flex-col p-4 gap-4">
@@ -92,6 +136,34 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          
+          <div className="py-2 border-t border-border">
+            <h3 className="font-medium text-foreground/90 mb-2">Google Services</h3>
+            {googleServices.map((service) => (
+              <a
+                key={service.name}
+                href={service.href}
+                className="block py-2 pl-4 text-foreground/80 hover:text-accent transition-colors duration-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {service.name}
+              </a>
+            ))}
+          </div>
+          
+          <div className="py-2 border-t border-border">
+            <h3 className="font-medium text-foreground/90 mb-2">Other Services</h3>
+            {otherServices.map((service) => (
+              <a
+                key={service.name}
+                href={service.href}
+                className="block py-2 pl-4 text-foreground/80 hover:text-accent transition-colors duration-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {service.name}
+              </a>
+            ))}
+          </div>
         </nav>
       </div>
     </header>

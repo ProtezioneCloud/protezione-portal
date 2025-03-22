@@ -6,8 +6,8 @@ import { Toaster } from './components/ui/sonner';
 import { LanguageProvider } from './contexts/LanguageContext';
 
 /**
- * This component wraps our App with the necessary providers
- * and ensures the router is configured correctly for GitHub Pages
+ * Note: This component is kept for reference but is not used.
+ * The actual app initialization is handled directly in main.tsx with App.tsx.
  */
 const AppWrapper: React.FC = () => {
   return (
