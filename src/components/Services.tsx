@@ -1,7 +1,8 @@
 
-import { CloudCog, Server, Database, Shield, Lock, Globe, Mail, Code, Settings } from "lucide-react";
+import { CloudCog, Server, Database, Shield, Lock, Globe, Mail, Code, Settings, ExternalLink } from "lucide-react";
 import FadeIn from "./FadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const { t } = useLanguage();
@@ -48,16 +49,24 @@ const Services = () => {
     {
       icon: <Code className="w-10 h-10 text-accent" />,
       title: t('services.erpnext'),
-      description: t('services.erpnext.description')
+      description: t('services.erpnext.description'),
+      link: "https://frappecloud.com/dashboard/signup?referrer=ac42104d"
     },
     {
       icon: <Mail className="w-10 h-10 text-accent" />,
       title: t('services.hosting'),
-      description: t('services.hosting.description')
+      description: t('services.hosting.description'),
+      link: "https://www.netsons.com/manage/aff.php?aff=1751"
+    },
+    {
+      icon: <Shield className="w-10 h-10 text-accent" />,
+      title: t('services.nextdns'),
+      description: t('services.nextdns.description'),
+      link: "https://nextdns.io/?from=8f47b5b2"
     }
   ];
 
-  const renderServiceCards = (services) => (
+  const renderServiceCards = (services, showAffiliateLink = false) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {services.map((service, index) => (
         <FadeIn key={index} delay={100 * index} className="h-full">
@@ -66,6 +75,17 @@ const Services = () => {
             <div className="mb-6">{service.icon}</div>
             <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
             <p className="text-muted-foreground">{service.description}</p>
+            {showAffiliateLink && service.link && (
+              <div className="mt-6">
+                <Button 
+                  variant="outline" 
+                  className="w-full flex items-center justify-center gap-2"
+                  onClick={() => window.open(service.link, '_blank')}
+                >
+                  {t('services.affiliate.button')} <ExternalLink className="w-4 h-4" />
+                </Button>
+              </div>
+            )}
           </div>
         </FadeIn>
       ))}
@@ -93,37 +113,18 @@ const Services = () => {
       
       <section id="other-services" className="section-padding bg-white relative">
         <div className="container max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div id="erpnext">
-              <FadeIn>
-                <div className="mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                    {t('erpnext.title')}
-                  </h2>
-                  <p className="text-muted-foreground">
-                    {t('erpnext.description')}
-                  </p>
-                </div>
-              </FadeIn>
-              
-              {renderServiceCards([otherServices[0]])}
+          <FadeIn>
+            <div className="mb-16 text-center max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                {t('otherservices.title')}
+              </h2>
+              <p className="text-muted-foreground">
+                {t('otherservices.description')}
+              </p>
             </div>
-            
-            <div id="hosting">
-              <FadeIn>
-                <div className="mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                    {t('hosting.title')}
-                  </h2>
-                  <p className="text-muted-foreground">
-                    {t('hosting.description')}
-                  </p>
-                </div>
-              </FadeIn>
-              
-              {renderServiceCards([otherServices[1]])}
-            </div>
-          </div>
+          </FadeIn>
+          
+          {renderServiceCards(otherServices, true)}
         </div>
       </section>
     </>

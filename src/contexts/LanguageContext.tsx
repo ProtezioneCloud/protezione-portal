@@ -73,7 +73,7 @@ export const translations: Translations = {
     it: 'per la Tua Azienda',
   },
   'hero.description': {
-    en: 'Specialized in Google Cloud Platform services, delivering enterprise-grade security, scalability, and performance for your mission-critical applications.',
+    en: 'Specialized in Google Cloud Platform services, we deliver enterprise-grade security, scalability, and performance for your mission-critical applications.',
     it: 'Specializzati in servizi Google Cloud Platform, offriamo sicurezza, scalabilità e prestazioni di livello enterprise per le tue applicazioni mission-critical.',
   },
   'hero.cta.start': {
@@ -93,6 +93,14 @@ export const translations: Translations = {
   'googleservices.description': {
     en: 'Comprehensive Google Cloud Platform solutions tailored to your business needs, from infrastructure setup to ongoing management and optimization.',
     it: 'Soluzioni Google Cloud Platform complete su misura per le esigenze della tua azienda, dall\'implementazione dell\'infrastruttura alla gestione e ottimizzazione continua.',
+  },
+  'otherservices.title': {
+    en: 'Other Services',
+    it: 'Altri Servizi',
+  },
+  'otherservices.description': {
+    en: 'Additional specialized solutions to complement your cloud infrastructure and enhance your digital presence.',
+    it: 'Soluzioni specializzate aggiuntive per completare la tua infrastruttura cloud e migliorare la tua presenza digitale.',
   },
   'erpnext.title': {
     en: 'ERPNext Solutions',
@@ -127,6 +135,14 @@ export const translations: Translations = {
   'services.erpnext.description': {
     en: 'Professional support, setup, configuration and custom modules development for ERPNext open source software to streamline your business operations.',
     it: 'Supporto professionale, configurazione e sviluppo di moduli personalizzati per il software open source ERPNext per ottimizzare le operazioni aziendali.',
+  },
+  'services.nextdns': {
+    en: 'Internet Protection',
+    it: 'Protezione Internet',
+  },
+  'services.nextdns.description': {
+    en: 'NextDNS-based protection against malware, phishing, and unwanted content for your entire network, providing a safer browsing experience.',
+    it: 'Protezione basata su NextDNS contro malware, phishing e contenuti indesiderati per l\'intera rete, offrendo un\'esperienza di navigazione più sicura.',
   },
   'services.hosting': {
     en: 'Domain & Email Hosting',
@@ -184,6 +200,10 @@ export const translations: Translations = {
     en: 'Leverage Google\'s global network for high-performance applications with multi-region deployments.',
     it: 'Sfrutta la rete globale di Google per applicazioni ad alte prestazioni con implementazioni multi-regione.',
   },
+  'services.affiliate.button': {
+    en: 'Visit Service',
+    it: 'Visita Servizio',
+  },
   
   // Learning section
   'learning.title': {
@@ -221,8 +241,8 @@ export const translations: Translations = {
     it: 'Soluzioni Google Cloud di Esperti per la Tua Azienda',
   },
   'about.specialist': {
-    en: 'IT Specialist',
-    it: 'Specialista IT',
+    en: 'IT Specialists',
+    it: 'Specialisti IT',
   },
   'about.experience': {
     en: '10+ years of experience with cloud infrastructure',
@@ -233,16 +253,16 @@ export const translations: Translations = {
     it: 'Certificazioni Professionali',
   },
   'about.paragraph1': {
-    en: 'As a certified Google Cloud specialist, I provide tailored cloud solutions that balance security, performance, and cost-efficiency. With deep technical expertise in Google\'s ecosystem, I help businesses leverage the full potential of cloud technology.',
-    it: 'Come specialista certificato Google Cloud, fornisco soluzioni cloud su misura che bilanciano sicurezza, prestazioni ed efficienza dei costi. Con una profonda competenza tecnica nell\'ecosistema Google, aiuto le aziende a sfruttare appieno il potenziale della tecnologia cloud.',
+    en: 'As certified Google Cloud specialists, we provide tailored cloud solutions that balance security, performance, and cost-efficiency. With deep technical expertise in Google\'s ecosystem, we help businesses leverage the full potential of cloud technology.',
+    it: 'Come specialisti certificati Google Cloud, forniamo soluzioni cloud su misura che bilanciano sicurezza, prestazioni ed efficienza dei costi. Con una profonda competenza tecnica nell\'ecosistema Google, aiutiamo le aziende a sfruttare appieno il potenziale della tecnologia cloud.',
   },
   'about.paragraph2': {
-    en: 'My approach focuses on understanding your unique business requirements and designing cloud architectures that align with your goals, whether you\'re migrating existing workloads, building new applications, or optimizing current deployments.',
-    it: 'Il mio approccio si concentra sulla comprensione delle tue esigenze aziendali uniche e sulla progettazione di architetture cloud allineate ai tuoi obiettivi, che tu stia migrando carichi di lavoro esistenti, creando nuove applicazioni o ottimizzando implementazioni attuali.',
+    en: 'Our approach focuses on understanding your unique business requirements and designing cloud architectures that align with your goals, whether you\'re migrating existing workloads, building new applications, or optimizing current deployments.',
+    it: 'Il nostro approccio si concentra sulla comprensione delle tue esigenze aziendali uniche e sulla progettazione di architetture cloud allineate ai tuoi obiettivi, che tu stia migrando carichi di lavoro esistenti, creando nuove applicazioni o ottimizzando implementazioni attuali.',
   },
   'about.cta': {
-    en: 'Work With Me',
-    it: 'Lavora Con Me',
+    en: 'Work With Us',
+    it: 'Lavora Con Noi',
   },
   
   // Contact section
@@ -251,8 +271,8 @@ export const translations: Translations = {
     it: 'Contattaci',
   },
   'contact.description': {
-    en: 'Have a project in mind or questions about Google Cloud services? I\'m here to help you navigate the cloud landscape and find the perfect solution for your needs.',
-    it: 'Hai un progetto in mente o domande sui servizi Google Cloud? Sono qui per aiutarti a navigare nel panorama cloud e trovare la soluzione perfetta per le tue esigenze.',
+    en: 'Have a project in mind or questions about Google Cloud services? We\'re here to help you navigate the cloud landscape and find the perfect solution for your needs.',
+    it: 'Hai un progetto in mente o domande sui servizi Google Cloud? Siamo qui per aiutarti a navigare nel panorama cloud e trovare la soluzione perfetta per le tue esigenze.',
   },
   'contact.sidebar.badge': {
     en: 'Get in Touch',
@@ -263,8 +283,8 @@ export const translations: Translations = {
     it: 'Parliamo della tua strategia cloud',
   },
   'contact.sidebar.description': {
-    en: 'Whether you\'re looking to migrate to Google Cloud, optimize your current setup, or enhance security, I\'m ready to help you achieve your goals.',
-    it: 'Che tu stia cercando di migrare a Google Cloud, ottimizzare la tua configurazione attuale o migliorare la sicurezza, sono pronto ad aiutarti a raggiungere i tuoi obiettivi.',
+    en: 'Whether you\'re looking to migrate to Google Cloud, optimize your current setup, or enhance security, we\'re ready to help you achieve your goals.',
+    it: 'Che tu stia cercando di migrare a Google Cloud, ottimizzare la tua configurazione attuale o migliorare la sicurezza, siamo pronti ad aiutarti a raggiungere i tuoi obiettivi.',
   },
   'contact.form.name': {
     en: 'Name',
@@ -295,8 +315,8 @@ export const translations: Translations = {
     it: 'Nome della tua azienda',
   },
   'contact.form.placeholder.message': {
-    en: 'How can I help you?',
-    it: 'Come posso aiutarti?',
+    en: 'How can we help you?',
+    it: 'Come possiamo aiutarti?',
   },
   'contact.form.submit': {
     en: 'Send Message',
