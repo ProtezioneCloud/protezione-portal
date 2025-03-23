@@ -69,8 +69,11 @@ const Services = () => {
   const renderServiceCards = (services, showAffiliateLink = false) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {services.map((service, index) => (
-        <FadeIn key={index} delay={100 * index} className="h-full">
-          <div className="bg-white rounded-xl shadow-card p-8 border border-border/50 h-full relative group hover:shadow-hover transition-all duration-300">
+        <div key={index} className="h-full">
+          <div 
+            className="bg-white rounded-xl shadow-card p-8 border border-border/50 h-full relative group hover:shadow-hover transition-all duration-300"
+            style={{ transform: "translateZ(0)" }} // Force GPU acceleration
+          >
             <div className="absolute top-0 left-0 w-full h-1 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-500"></div>
             <div className="mb-6">{service.icon}</div>
             <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
@@ -87,7 +90,7 @@ const Services = () => {
               </div>
             )}
           </div>
-        </FadeIn>
+        </div>
       ))}
     </div>
   );
@@ -96,16 +99,14 @@ const Services = () => {
     <>
       <section id="google-services" className="section-padding bg-secondary/50 relative">
         <div className="container max-w-7xl mx-auto px-6">
-          <FadeIn>
-            <div className="mb-16 text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                {t('googleservices.title')}
-              </h2>
-              <p className="text-muted-foreground">
-                {t('googleservices.description')}
-              </p>
-            </div>
-          </FadeIn>
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              {t('googleservices.title')}
+            </h2>
+            <p className="text-muted-foreground">
+              {t('googleservices.description')}
+            </p>
+          </div>
 
           {renderServiceCards(googleServices)}
         </div>
@@ -113,16 +114,14 @@ const Services = () => {
       
       <section id="other-services" className="section-padding bg-white relative">
         <div className="container max-w-7xl mx-auto px-6">
-          <FadeIn>
-            <div className="mb-16 text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                {t('otherservices.title')}
-              </h2>
-              <p className="text-muted-foreground">
-                {t('otherservices.description')}
-              </p>
-            </div>
-          </FadeIn>
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              {t('otherservices.title')}
+            </h2>
+            <p className="text-muted-foreground">
+              {t('otherservices.description')}
+            </p>
+          </div>
           
           {renderServiceCards(otherServices, true)}
         </div>
