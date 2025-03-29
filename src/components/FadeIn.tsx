@@ -17,7 +17,7 @@ const FadeIn: React.FC<FadeInProps> = ({
   className,
   direction = 'up',
   delay = 0,
-  duration = 500,
+  duration = 800, // Increased default duration from 500 to 800ms
   threshold = 0.1,
   once = true
 }) => {

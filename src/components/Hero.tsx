@@ -16,27 +16,27 @@ const Hero = () => {
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <FadeIn duration={800}>
+            <FadeIn duration={1200}>
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-4">
                 <Shield className="w-4 h-4 mr-2" />
                 <span className="text-sm font-medium">{t('hero.badge')}</span>
               </div>
             </FadeIn>
             
-            <FadeIn delay={200} duration={800}>
+            <FadeIn delay={300} duration={1500}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
                 {t('hero.title1')} <br />
                 <span className="text-accent">{t('hero.title2')}</span> {t('hero.title3')}
               </h1>
             </FadeIn>
             
-            <FadeIn delay={400} duration={800}>
+            <FadeIn delay={600} duration={1500}>
               <p className="text-lg text-muted-foreground max-w-xl">
                 {t('hero.description')}
               </p>
             </FadeIn>
             
-            <FadeIn delay={600} duration={800}>
+            <FadeIn delay={900} duration={1500}>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a 
                   href="#contact" 
@@ -55,7 +55,7 @@ const Hero = () => {
           </div>
           
           <div className="hidden lg:block">
-            <FadeIn direction="right" delay={700} duration={900}>
+            <FadeIn direction="right" delay={1200} duration={1800}>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-radial from-accent/10 to-transparent rounded-full blur-3xl" aria-hidden="true" />
                 <div className="glass rounded-2xl p-8 shadow-card relative">
