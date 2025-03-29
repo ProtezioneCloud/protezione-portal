@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <footer className="bg-white border-t border-border py-12">
       <div className="container max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Shield className="h-6 w-6 text-accent" />
@@ -42,11 +42,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-base mb-4">{t('footer.contact')}</h4>
-            <p className="text-muted-foreground mb-1">contact@protezione.cloud</p>
           </div>
         </div>
         

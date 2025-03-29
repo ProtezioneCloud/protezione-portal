@@ -71,10 +71,10 @@ const Services = () => {
       {services.map((service, index) => (
         <div key={index} className="h-full">
           <div 
-            className="bg-white rounded-xl shadow-card p-8 border border-border/50 h-full relative group hover:shadow-hover transition-all duration-300"
-            style={{ transform: "translateZ(0)" }} // Force GPU acceleration
+            className="bg-white rounded-xl shadow-card p-8 border border-border/50 h-full relative group hover:shadow-hover transition-all duration-500"
+            style={{ transform: "translateZ(0)", willChange: "transform, opacity" }}
           >
-            <div className="absolute top-0 left-0 w-full h-1 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-500"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-700"></div>
             <div className="mb-6">{service.icon}</div>
             <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
             <p className="text-muted-foreground">{service.description}</p>
