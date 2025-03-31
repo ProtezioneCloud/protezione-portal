@@ -17,7 +17,7 @@ const FadeIn: React.FC<FadeInProps> = ({
   className,
   direction = 'up',
   delay = 0,
-  duration = 800, // Increased default duration from 500 to 800ms
+  duration = 700,
   threshold = 0.1,
   once = true
 }) => {
@@ -62,6 +62,10 @@ const FadeIn: React.FC<FadeInProps> = ({
         return 'animate-slide-in-right';
       case 'none':
         return 'animate-fade-in';
+      case 'left':
+        return 'animate-slide-in-left';
+      case 'down':
+        return 'animate-fade-in-down';
       default:
         return 'animate-fade-in-up';
     }
@@ -77,7 +81,8 @@ const FadeIn: React.FC<FadeInProps> = ({
       style={{
         animationDelay: `${delay}ms`,
         animationDuration: `${duration}ms`,
-        willChange: 'transform, opacity'
+        willChange: 'transform, opacity',
+        transformOrigin: 'center center',
       }}
     >
       {children}
