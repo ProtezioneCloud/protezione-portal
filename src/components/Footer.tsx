@@ -27,7 +27,7 @@ const Footer = () => {
             <p className="text-muted-foreground max-w-sm mb-6">
               {t('language') === 'en' 
                 ? 'Expert Google Cloud solutions for businesses seeking secure, scalable, and efficient cloud infrastructure.'
-                : 'Soluzioni Google Cloud esperte per aziende che cercano un\'infrastruttura cloud sicura, scalabile ed efficiente.'}
+                : 'Soluzioni Google Cloud per aziende che cercano un\'infrastruttura cloud sicura, scalabile ed efficiente.'}
             </p>
           </div>
           
