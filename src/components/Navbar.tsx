@@ -1,6 +1,4 @@
-
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { Menu, X, Shield } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -20,7 +18,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Reorganized navLinks to match the page sections order
   const navLinks = [
     { name: t('nav.home'), href: '#home' },
     { name: t('nav.google.title'), href: '#google-services' },
@@ -28,15 +25,6 @@ const Navbar = () => {
     { name: t('nav.learning'), href: '#learning' },
     { name: t('nav.about'), href: '#about' },
     { name: t('nav.contact'), href: '#contact' },
-  ];
-  
-  const googleServices = [
-    { name: t('nav.google.services'), href: '#google-services' },
-  ];
-  
-  const otherServices = [
-    { name: t('nav.erpnext'), href: '#erpnext' },
-    { name: t('nav.hosting'), href: '#hosting' },
   ];
 
   return (
@@ -49,10 +37,13 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 group">
+        <a 
+          href="#home" 
+          className="flex items-center gap-2 group"
+        >
           <Shield className="h-7 w-7 text-accent group-hover:text-primary transition-colors duration-300" />
           <span className="font-display font-semibold text-xl">protezione.cloud</span>
-        </Link>
+        </a>
 
         <nav className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
