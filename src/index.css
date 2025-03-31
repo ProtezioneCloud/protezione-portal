@@ -52,29 +52,29 @@
   }
 
   .dark {
-    /* Refined darker background with better contrast */
-    --background: 222 47% 11%;
-    --foreground: 213 31% 91%;
+    /* Base dark theme using the specified HSL value */
+    --background: 240 4% 10%;
+    --foreground: 210 40% 98%;
 
-    /* Card colors with proper contrast */
-    --card: 225 25% 16%;
+    /* Card colors using the specified HSL value */
+    --card: 240 3.7% 15.9%;
     --card-foreground: 210 40% 98%;
 
     /* Popover with matching dark theme */
-    --popover: 225 25% 16%;
+    --popover: 240 3.7% 15.9%;
     --popover-foreground: 210 40% 98%;
 
     /* Keep primary color for brand consistency but adjust for dark mode */
     --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
 
-    /* Secondary colors that work with dark backgrounds */
-    --secondary: 222 47% 18%;
+    /* Secondary colors that complement the base color */
+    --secondary: 240 3.7% 22%;
     --secondary-foreground: 210 40% 98%;
 
     /* Muted tones that maintain readability */
-    --muted: 223 47% 20%;
-    --muted-foreground: 215 20% 75%;
+    --muted: 240 3.7% 20%;
+    --muted-foreground: 240 5% 75%;
 
     /* Accent color adjusted for dark mode */
     --accent: 227 62% 65%;
@@ -84,19 +84,19 @@
     --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
-    /* Subtle borders that don't stand out too much */
-    --border: 217 19% 27%;
-    --input: 217 19% 27%;
+    /* Subtle borders that complement the card background */
+    --border: 240 3.7% 25%;
+    --input: 240 3.7% 20%;
     --ring: 221 83% 60%;
 
-    /* Sidebar with proper dark theme colors */
-    --sidebar-background: 225 25% 14%;
+    /* Sidebar with matching dark theme colors */
+    --sidebar-background: 240 3.7% 13%;
     --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 221 83% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 225 25% 20%;
+    --sidebar-accent: 240 3.7% 20%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 225 25% 25%;
+    --sidebar-border: 240 3.7% 25%;
     --sidebar-ring: 221 83% 53%;
   }
 }
@@ -147,7 +147,7 @@ html {
 
 /* Dark mode glass effect */
 .dark .glass {
-  background: rgba(30, 30, 46, 0.7);
+  background: rgba(35, 35, 50, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08);
