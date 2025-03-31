@@ -1,4 +1,3 @@
-
 import { CloudCog, Server, Database, Shield, Lock, Globe, Mail, Code, Settings, ExternalLink } from "lucide-react";
 import FadeIn from "./FadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -22,11 +21,6 @@ const Services = () => {
       icon: <Server className="w-10 h-10 text-accent" />,
       title: t('services.cloud'),
       description: t('services.cloud.description')
-    },
-    {
-      icon: <Database className="w-10 h-10 text-accent" />,
-      title: t('services.data'),
-      description: t('services.data.description')
     },
     {
       icon: <Shield className="w-10 h-10 text-accent" />,
