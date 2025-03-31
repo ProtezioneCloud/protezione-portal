@@ -1,44 +1,29 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
-  prefix: "",
-  theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
-    extend: {
-      colors: {
-        // Refined white and background colors
-        background: {
-          DEFAULT: "hsl(210, 40%, 98%)",  // Slightly softer white
-          secondary: "hsl(210, 40%, 96%)" // Lighter secondary background
-        },
-        white: {
-          DEFAULT: "hsl(0, 0%, 100%)",
-          soft: "hsl(210, 20%, 99%)",     // Softer white for boxes
-          light: "hsl(210, 40%, 97%)"     // Very light white variant
-        },
-        card: {
-          DEFAULT: "hsl(0, 0%, 100%)",
-          background: "hsl(210, 40%, 98%)"
-        },
-        border: {
-          DEFAULT: "hsl(220, 13%, 90%)",  // Soft border color
-          light: "hsl(220, 13%, 95%)"     // Even lighter border
-        },
+	darkMode: ["class"],
+	content: [
+		"./pages/**/*.{ts,tsx}",
+		"./components/**/*.{ts,tsx}",
+		"./app/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}",
+	],
+	prefix: "",
+	theme: {
+		container: {
+			center: true,
+			padding: '2rem',
+			screens: {
+				'2xl': '1400px'
+			}
+		},
+		extend: {
+			colors: {
+				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
+				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -63,6 +48,10 @@ export default {
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
+				},
+				card: {
+					DEFAULT: 'hsl(var(--card))',
+					foreground: 'hsl(var(--card-foreground))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

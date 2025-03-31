@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -12,7 +13,7 @@
     --card: 0 0% 100%;
     --card-foreground: 220 20% 20%;
 
-    --popover: 210 40% 98%;
+    --popover: 0 0% 100%;
     --popover-foreground: 220 20% 20%;
 
     --primary: 221 83% 53%;
@@ -44,75 +45,46 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Refined white tones */
-    --white-soft: 210 20% 99%;
-    --white-light: 210 40% 97%;
   }
 
   .dark {
-    /* Base dark theme inspired by carlettini.org */
-    --background: 240 15% 8%; /* Deep blue-black background */
-    --foreground: 0 0% 95%;  /* Nearly white text for contrast */
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
 
-    /* Card colors with the specified HSL value */
-    --card: 240 3.7% 15.9%;
-    --card-foreground: 0 0% 95%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
 
-    /* Popover with matching theme */
-    --popover: 240 3.7% 15.9%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
 
-    /* Primary color as rich purple similar to carlettini.org */
-    --primary: 255 70% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Secondary colors that complement the base color */
-    --secondary: 248 10% 20%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 210 40% 98%;
 
-    /* Muted tones with better visibility */
-    --muted: 240 5% 20%;
-    --muted-foreground: 240 5% 75%;
+    --muted: 222 47% 11%;
+    --muted-foreground: 217 10% 64%;
 
-    /* Purple accent similar to carlettini.org */
-    --accent: 260 60% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 227 62% 60%;
+    --accent-foreground: 210 40% 98%;
 
-    /* Brighter destructive for visibility */
-    --destructive: 0 80% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
 
-    /* Refined borders with purple hint */
-    --border: 250 5% 25%;
-    --input: 250 5% 20%;
-    --ring: 255 70% 60%;
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 221 83% 53%;
 
-    /* Sidebar with matching dark theme colors */
-    --sidebar-background: 240 15% 6%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 255 70% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 10% 18%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 250 5% 25%;
-    --sidebar-ring: 255 70% 60%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.soft-white-bg {
-  @apply bg-white-soft;
-}
-
-.refined-background {
-  @apply bg-background-secondary;
 }
 
 @layer base {
@@ -129,22 +101,17 @@
   }
 }
 
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
+/* Glass effect */
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.dark .glass {
-  background: rgba(35, 35, 50, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-dark {
@@ -158,6 +125,7 @@ html {
   @apply py-20 md:py-32;
 }
 
+/* Animations */
 .animate-delay-100 {
   animation-delay: 100ms;
 }
@@ -188,20 +156,4 @@ html {
 
 .animate-duration-1000 {
   animation-duration: 1000ms;
-}
-
-.dark .card,
-.dark .bg-white {
-  @apply bg-card border-border;
-}
-
-.dark button,
-.dark input,
-.dark textarea,
-.dark select {
-  @apply border-border bg-card;
-}
-
-.dark *:focus-visible {
-  @apply outline-primary ring-primary/30;
 }
