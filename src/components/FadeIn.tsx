@@ -24,14 +24,16 @@ const FadeIn: React.FC<FadeInProps> = ({
   initiallyVisible = false
 }) => {
   const [isVisible, setIsVisible] = useState(initiallyVisible);
+  const [hasIntersected, setHasIntersected] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          setHasIntersected(true);
+          
           // Use setTimeout to add a slight delay before setting isVisible
-          // This ensures DOM has time to process previous animations
           setTimeout(() => {
             setIsVisible(true);
           }, 10);
@@ -83,6 +85,7 @@ const FadeIn: React.FC<FadeInProps> = ({
       ref={ref}
       className={cn(
         isVisible ? getAnimationClass() : 'opacity-0',
+        hasIntersected ? '' : 'invisible', // Add invisible class if never intersected
         className
       )}
       style={{
