@@ -52,42 +52,52 @@
   }
 
   .dark {
-    --background: 224 71% 4%;
+    /* Refined darker background with better contrast */
+    --background: 222 47% 11%;
     --foreground: 213 31% 91%;
 
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
+    /* Card colors with proper contrast */
+    --card: 225 25% 16%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
+    /* Popover with matching dark theme */
+    --popover: 225 25% 16%;
+    --popover-foreground: 210 40% 98%;
 
+    /* Keep primary color for brand consistency but adjust for dark mode */
     --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 222 47% 11%;
+    /* Secondary colors that work with dark backgrounds */
+    --secondary: 222 47% 18%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 222 47% 11%;
-    --muted-foreground: 217 10% 64%;
+    /* Muted tones that maintain readability */
+    --muted: 223 47% 20%;
+    --muted-foreground: 215 20% 75%;
 
-    --accent: 227 62% 60%;
+    /* Accent color adjusted for dark mode */
+    --accent: 227 62% 65%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62% 30%;
+    /* Destructive color with better visibility on dark */
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
+    /* Subtle borders that don't stand out too much */
     --border: 217 19% 27%;
     --input: 217 19% 27%;
-    --ring: 221 83% 53%;
+    --ring: 221 83% 60%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    /* Sidebar with proper dark theme colors */
+    --sidebar-background: 225 25% 14%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 221 83% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 225 25% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 225 25% 25%;
+    --sidebar-ring: 221 83% 53%;
   }
 }
 
@@ -135,6 +145,14 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+/* Dark mode glass effect */
+.dark .glass {
+  background: rgba(30, 30, 46, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .glass-dark {
   background: rgba(20, 20, 30, 0.7);
   backdrop-filter: blur(10px);
@@ -177,4 +195,23 @@ html {
 
 .animate-duration-1000 {
   animation-duration: 1000ms;
+}
+
+/* Dark mode card tweaks */
+.dark .card,
+.dark .bg-white {
+  @apply bg-card border-border;
+}
+
+/* Dark mode button and input improvements */
+.dark button,
+.dark input,
+.dark textarea,
+.dark select {
+  @apply border-border bg-card;
+}
+
+/* Refined focus states for dark mode */
+.dark *:focus-visible {
+  @apply outline-primary ring-primary/30;
 }
