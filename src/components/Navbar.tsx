@@ -20,8 +20,12 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Reorganized navLinks to match the page sections order
   const navLinks = [
     { name: t('nav.home'), href: '#home' },
+    { name: t('nav.google.title'), href: '#google-services' },
+    { name: t('nav.other.title'), href: '#other-services' },
+    { name: t('nav.learning'), href: '#learning' },
     { name: t('nav.about'), href: '#about' },
     { name: t('nav.contact'), href: '#contact' },
   ];
@@ -31,7 +35,6 @@ const Navbar = () => {
   ];
   
   const otherServices = [
-    { name: t('nav.learning'), href: '#learning' },
     { name: t('nav.erpnext'), href: '#erpnext' },
     { name: t('nav.hosting'), href: '#hosting' },
   ];
@@ -62,52 +65,6 @@ const Navbar = () => {
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300"></span>
             </a>
           ))}
-          
-          <div className="relative group">
-            <a 
-              href="#google-services" 
-              className="font-medium text-foreground/80 hover:text-accent transition-colors duration-300 cursor-pointer flex items-center"
-            >
-              {t('nav.google.title')}
-              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300"></span>
-            </a>
-            <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-background border border-border hidden group-hover:block">
-              <div className="py-1">
-                {googleServices.map((service) => (
-                  <a
-                    key={service.name}
-                    href={service.href}
-                    className="block px-4 py-2 text-sm text-foreground/80 hover:bg-muted transition-colors"
-                  >
-                    {service.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative group">
-            <a 
-              href="#other-services" 
-              className="font-medium text-foreground/80 hover:text-accent transition-colors duration-300 cursor-pointer flex items-center"
-            >
-              {t('nav.other.title')}
-              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300"></span>
-            </a>
-            <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-background border border-border hidden group-hover:block">
-              <div className="py-1">
-                {otherServices.map((service) => (
-                  <a
-                    key={service.name}
-                    href={service.href}
-                    className="block px-4 py-2 text-sm text-foreground/80 hover:bg-muted transition-colors"
-                  >
-                    {service.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
           
           <LanguageSwitcher />
         </nav>
@@ -145,34 +102,6 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          
-          <div className="py-2 border-t border-border">
-            <h3 className="font-medium text-foreground/90 mb-2">{t('nav.google.title')}</h3>
-            {googleServices.map((service) => (
-              <a
-                key={service.name}
-                href={service.href}
-                className="block py-2 pl-4 text-foreground/80 hover:text-accent transition-colors duration-300"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {service.name}
-              </a>
-            ))}
-          </div>
-          
-          <div className="py-2 border-t border-border">
-            <h3 className="font-medium text-foreground/90 mb-2">{t('nav.other.title')}</h3>
-            {otherServices.map((service) => (
-              <a
-                key={service.name}
-                href={service.href}
-                className="block py-2 pl-4 text-foreground/80 hover:text-accent transition-colors duration-300"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {service.name}
-              </a>
-            ))}
-          </div>
         </nav>
       </div>
     </header>
