@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -13,7 +12,7 @@
     --card: 0 0% 100%;
     --card-foreground: 220 20% 20%;
 
-    --popover: 0 0% 100%;
+    --popover: 210 40% 98%;
     --popover-foreground: 220 20% 20%;
 
     --primary: 221 83% 53%;
@@ -45,6 +44,10 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    // Refined white tones
+    --white-soft: 210 20% 99%;
+    --white-light: 210 40% 97%;
   }
 
   .dark {
@@ -85,6 +88,23 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+}
+
+// Soft glass effect with refined white
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.soft-white-bg {
+  @apply bg-white-soft;
+}
+
+/* Additional refined background classes */
+.refined-background {
+  @apply bg-background-secondary;
 }
 
 @layer base {
