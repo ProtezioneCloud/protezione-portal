@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -45,7 +46,7 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    // Refined white tones
+    /* Refined white tones */
     --white-soft: 210 20% 99%;
     --white-light: 210 40% 97%;
   }
@@ -90,7 +91,7 @@
   }
 }
 
-// Soft glass effect with refined white
+/* Soft glass effect with refined white */
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
