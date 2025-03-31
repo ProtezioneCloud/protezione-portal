@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -53,7 +52,7 @@
 
   .dark {
     /* Base dark theme using the specified HSL value */
-    --background: 240 4% 10%;
+    --background: 240 3.7% 15.9%;
     --foreground: 210 40% 98%;
 
     /* Card colors using the specified HSL value */
