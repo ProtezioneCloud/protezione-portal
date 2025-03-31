@@ -51,56 +51,55 @@
   }
 
   .dark {
-    /* Base dark theme using the specified HSL value */
-    --background: 240 3.7% 15.9%;
-    --foreground: 210 40% 98%;
+    /* Base dark theme inspired by carlettini.org */
+    --background: 240 15% 8%; /* Deep blue-black background */
+    --foreground: 0 0% 95%;  /* Nearly white text for contrast */
 
-    /* Card colors using the specified HSL value */
+    /* Card colors with the specified HSL value */
     --card: 240 3.7% 15.9%;
-    --card-foreground: 210 40% 98%;
+    --card-foreground: 0 0% 95%;
 
-    /* Popover with matching dark theme */
+    /* Popover with matching theme */
     --popover: 240 3.7% 15.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Keep primary color for brand consistency but adjust for dark mode */
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary color as rich purple similar to carlettini.org */
+    --primary: 255 70% 60%;
+    --primary-foreground: 0 0% 100%;
 
     /* Secondary colors that complement the base color */
-    --secondary: 240 3.7% 22%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 248 10% 20%;
+    --secondary-foreground: 0 0% 95%;
 
-    /* Muted tones that maintain readability */
-    --muted: 240 3.7% 20%;
+    /* Muted tones with better visibility */
+    --muted: 240 5% 20%;
     --muted-foreground: 240 5% 75%;
 
-    /* Accent color adjusted for dark mode */
-    --accent: 227 62% 65%;
-    --accent-foreground: 210 40% 98%;
+    /* Purple accent similar to carlettini.org */
+    --accent: 260 60% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Destructive color with better visibility on dark */
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 210 40% 98%;
+    /* Brighter destructive for visibility */
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Subtle borders that complement the card background */
-    --border: 240 3.7% 25%;
-    --input: 240 3.7% 20%;
-    --ring: 221 83% 60%;
+    /* Refined borders with purple hint */
+    --border: 250 5% 25%;
+    --input: 250 5% 20%;
+    --ring: 255 70% 60%;
 
     /* Sidebar with matching dark theme colors */
-    --sidebar-background: 240 3.7% 13%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 221 83% 53%;
+    --sidebar-background: 240 15% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 255 70% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 20%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 240 3.7% 25%;
-    --sidebar-ring: 221 83% 53%;
+    --sidebar-accent: 240 10% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 250 5% 25%;
+    --sidebar-ring: 255 70% 60%;
   }
 }
 
-/* Soft glass effect with refined white */
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
@@ -112,7 +111,6 @@
   @apply bg-white-soft;
 }
 
-/* Additional refined background classes */
 .refined-background {
   @apply bg-background-secondary;
 }
@@ -131,12 +129,10 @@
   }
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Glass effect */
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
@@ -144,7 +140,6 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* Dark mode glass effect */
 .dark .glass {
   background: rgba(35, 35, 50, 0.7);
   backdrop-filter: blur(10px);
@@ -163,7 +158,6 @@ html {
   @apply py-20 md:py-32;
 }
 
-/* Animations */
 .animate-delay-100 {
   animation-delay: 100ms;
 }
@@ -196,13 +190,11 @@ html {
   animation-duration: 1000ms;
 }
 
-/* Dark mode card tweaks */
 .dark .card,
 .dark .bg-white {
   @apply bg-card border-border;
 }
 
-/* Dark mode button and input improvements */
 .dark button,
 .dark input,
 .dark textarea,
@@ -210,7 +202,6 @@ html {
   @apply border-border bg-card;
 }
 
-/* Refined focus states for dark mode */
 .dark *:focus-visible {
   @apply outline-primary ring-primary/30;
 }
