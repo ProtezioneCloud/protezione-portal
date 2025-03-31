@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Menu, X, Shield } from "lucide-react";
@@ -27,6 +28,11 @@ const Navbar = () => {
     { name: t('nav.contact'), href: '#contact' },
   ];
 
+  const handleLogoClick = (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <header 
       className={cn(
@@ -40,6 +46,7 @@ const Navbar = () => {
         <a 
           href="#home" 
           className="flex items-center gap-2 group"
+          onClick={handleLogoClick}
         >
           <Shield className="h-7 w-7 text-accent group-hover:text-primary transition-colors duration-300" />
           <span className="font-display font-semibold text-xl">protezione.cloud</span>
