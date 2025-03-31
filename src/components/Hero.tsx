@@ -16,27 +16,27 @@ const Hero = () => {
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <FadeIn direction="up" duration={600}>
+            <FadeIn direction="up" duration={600} delay={100} initiallyVisible={false}>
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-4">
                 <Shield className="w-4 h-4 mr-2" />
                 <span className="text-sm font-medium">{t('hero.badge')}</span>
               </div>
             </FadeIn>
             
-            <FadeIn direction="up" delay={150} duration={700}>
+            <FadeIn direction="up" delay={300} duration={700} initiallyVisible={false}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
                 {t('hero.title1')} <br />
                 <span className="text-accent">{t('hero.title2')}</span> {t('hero.title3')}
               </h1>
             </FadeIn>
             
-            <FadeIn direction="up" delay={250} duration={800}>
+            <FadeIn direction="up" delay={500} duration={700} initiallyVisible={false}>
               <p className="text-lg text-muted-foreground max-w-xl">
                 {t('hero.description')}
               </p>
             </FadeIn>
             
-            <FadeIn direction="up" delay={350} duration={800}>
+            <FadeIn direction="up" delay={700} duration={700} initiallyVisible={false}>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a 
                   href="#contact" 
@@ -55,20 +55,20 @@ const Hero = () => {
           </div>
           
           <div className="hidden lg:block">
-            <FadeIn direction="right" delay={400} duration={900}>
+            <FadeIn direction="right" delay={900} duration={800} initiallyVisible={false}>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-radial from-accent/10 to-transparent rounded-full blur-3xl" aria-hidden="true" />
                 <div className="glass rounded-2xl p-8 shadow-card relative">
                   <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-6">
-                      <FadeIn direction="up" delay={500} duration={700}>
+                      <FadeIn direction="up" delay={1100} duration={700} initiallyVisible={false}>
                         <div className="bg-white rounded-xl p-5 shadow-soft">
                           <Cloud className="w-8 h-8 text-accent mb-3" />
                           <h3 className="font-semibold text-lg">Cloud Infrastructure</h3>
                           <p className="text-sm text-muted-foreground mt-1">Scalable & secure GCP solutions</p>
                         </div>
                       </FadeIn>
-                      <FadeIn direction="up" delay={600} duration={700}>
+                      <FadeIn direction="up" delay={1300} duration={700} initiallyVisible={false}>
                         <div className="bg-accent text-white rounded-xl p-5 shadow-soft">
                           <Shield className="w-8 h-8 mb-3" />
                           <h3 className="font-semibold text-lg">Security First</h3>
@@ -77,14 +77,14 @@ const Hero = () => {
                       </FadeIn>
                     </div>
                     <div className="space-y-6 mt-8">
-                      <FadeIn direction="up" delay={700} duration={700}>
+                      <FadeIn direction="up" delay={1500} duration={700} initiallyVisible={false}>
                         <div className="bg-white rounded-xl p-5 shadow-soft">
                           <Server className="w-8 h-8 text-accent mb-3" />
                           <h3 className="font-semibold text-lg">Managed Services</h3>
                           <p className="text-sm text-muted-foreground mt-1">24/7 expert support & monitoring</p>
                         </div>
                       </FadeIn>
-                      <FadeIn direction="up" delay={800} duration={700}>
+                      <FadeIn direction="up" delay={1700} duration={700} initiallyVisible={false}>
                         <div className="bg-secondary rounded-xl p-5 shadow-soft">
                           <div className="flex justify-between items-center mb-3">
                             <span className="text-xs text-muted-foreground">Uptime</span>

@@ -10,6 +10,7 @@ interface FadeInProps {
   duration?: number;
   threshold?: number;
   once?: boolean;
+  initiallyVisible?: boolean;
 }
 
 const FadeIn: React.FC<FadeInProps> = ({
@@ -19,16 +20,22 @@ const FadeIn: React.FC<FadeInProps> = ({
   delay = 0,
   duration = 700,
   threshold = 0.1,
-  once = true
+  once = true,
+  initiallyVisible = false
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(initiallyVisible);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // Use setTimeout to add a slight delay before setting isVisible
+          // This ensures DOM has time to process previous animations
+          setTimeout(() => {
+            setIsVisible(true);
+          }, 10);
+          
           if (once && ref.current) {
             observer.unobserve(ref.current);
           }
